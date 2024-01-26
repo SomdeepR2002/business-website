@@ -12,6 +12,9 @@ body{
     height: 100vh;
 }
 
+li{
+    list-style-type:none ;
+}
 
 .links{
     text-decoration: none;
@@ -21,7 +24,7 @@ body{
 a{
     text-decoration: none;
     color: gray;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 a:hover{
@@ -31,16 +34,18 @@ a:hover{
 header{
     width: 100%;
     position: relative;
+    padding: 0 2rem;
 }
 
 .navbar{
     width: 100vw;
     height: 60px;
-    max-width: 1200px;
+    max-width: 75vw;
+    margin: 0 auto;
+    align-self: center;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0 auto;
 }
 
 .navbar .logo a{
@@ -59,8 +64,38 @@ header{
     cursor: pointer;
     display: none;
 }
+/*DROPDOWN MENU*/
+.dropdown-menu{
+    position: absolute;
+    right: 5rem;
+    top:60px;
+    height: 0;
+    width: 200px;
+    background: rgba(138, 136, 136, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+}
 
-/* RESPONSIVE DESIGN */
+.dropdown-menu.open{
+    height:auto;
+}
+
+.dropdown-menu li{
+    display: flex;
+    padding: 0.5rem;
+    align-items: center;
+    justify-content: center;
+
+}
+/*RESPONSIVE DESIGN*/
 @media (max-width:992px) {
-    
+    .navbar .links{
+        display: none;
+    }
+    .navbar .toggle-btn{
+        display: block ;
+    }
+    .dropdown-menu{
+        display: block;
+    }
 }
